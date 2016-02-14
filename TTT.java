@@ -4,7 +4,7 @@ class TTT{
 
    public static void main(String argv[]){
    
-   // set up, board, symbol
+   // set up, board, display board, symbol and gameState (ongoing, tie, win)
       char []playBoard = {'#','#','#','#','#','#','#','#','#'};
       char[][] displayBoard = {{' ','|',' ','|',' '},
                               {'-','+','-','+','-'}, 
@@ -15,20 +15,27 @@ class TTT{
       char symbol = 'X';
       int gameState = 0; 
       while(gameState ==0){
-         int choice = makeChoice(playBoard,symbol); 
       // take turn
+         int choice = makeChoice(playBoard,symbol); 
       
-      //update board
+      //update boards
          playBoard[choice] = symbol; 
          updateBoard(displayBoard,choice, symbol);
       
-      // game state
+      // game state 0: ongoing 1: tie 2: win
          gameState = getGameState(playBoard); 
       
       // display 
          display(displayBoard);
          symbol = togglePlayer(symbol);
       }//while
+      
+      if(gameState == 1)
+         System.out.println("Tie!");
+      else{
+        // rewind to previous player, who won
+         System.out.println("congratuations " + togglePlayer(symbol));
+         }
    }// main
 
    static char togglePlayer(char s){
