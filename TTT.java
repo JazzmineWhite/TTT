@@ -5,7 +5,7 @@ class TTT{
    public static void main(String argv[]){
    
    // set up, board, display board, symbol and gameState (ongoing, tie, win)
-      char []playBoard = {'#','#','#','#','#','#','#','#','#'};
+      char []playBoard = {'*','*','*','#','#','#','#','#','#'};
       char[][] displayBoard = {{' ','|',' ','|',' '},
                               {'-','+','-','+','-'}, 
                               {' ','|',' ','|',' '},
