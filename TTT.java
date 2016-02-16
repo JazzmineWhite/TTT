@@ -1,6 +1,6 @@
 import java.util.*; 
 
-class TTT{
+This is Jazzmine's class TTT{
 
    public static void main(String argv[]){
    
